@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Docs: https://docs.joomla.org/Manifest_files -->
-<extension type="plugin" group="User" method="upgrade">
+<extension version="1.0" type="plugin" group="User" method="upgrade">
   <name>Grouper</name>
   <author>Emilio Dalla Torre</author>
   <creationDate>2020-04-13</creationDate>
   <authorEmail>info@emiliodallatorre.it</authorEmail>
   <authorUrl>www.emiliodallatorre.it</authorUrl>
-  <version>0.0.0-9-ga742f7b</version>
+  <version>1.0.1-1-gc27222d</version>
   <description></description>
   <administration>
     <files>
