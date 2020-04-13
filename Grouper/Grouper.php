@@ -22,7 +22,8 @@ class PlgUserGrouper extends JPlugin {
     sort($y);
 
     JLog::add(implode("|", $x));
-    JLog::add(implode("|", $x));
+    JLog::add(implode("|", $y));
+    JLog::add($x == $y ? 'true' : 'false');
 
     return $x == $y;
   }
@@ -56,40 +57,54 @@ class PlgUserGrouper extends JPlugin {
       {
         case "base":
         // Tipologia di utenti: 15.
-        if($this->array_values_identical(JUserHelper::getUserGroups($data['id']), array(15,2)))
+        if(in_array ( 15, JUserHelper::getUserGroups($data['id'])))
         {
           JLog::add('L\'utente esiste già, e i gruppi sono ok.');
           break;
+        } else {
+          JLog::add('L\'utente esiste, ma devo cambiare i gruppi.');
+          JUserHelper::setUserGroups($data['id'], array(15, 2));
+          break;
         }
-        JUserHelper::setUserGroups($data['id'], array(15, 2));
-        break;
+
+
         case "medic":
         // Tipologia di utenti: 10.
-        if($this->array_values_identical(JUserHelper::getUserGroups($data['id']), array(10,2)))
+        if(in_array ( 10, JUserHelper::getUserGroups($data['id'])))
         {
           JLog::add('L\'utente esiste già, e i gruppi sono ok.');
           break;
+        } else {
+          JLog::add('L\'utente esiste, ma devo cambiare i gruppi.');
+          JUserHelper::setUserGroups($data['id'], array(10, 2));
+          break;
         }
-        JUserHelper::setUserGroups($data['id'], array(10, 2));
-        break;
+
+
         case "partner":
         // Tipologia di utenti: 11.
-        if($this->array_values_identical(JUserHelper::getUserGroups($data['id']), array(11,2)))
+        if(in_array ( 11, JUserHelper::getUserGroups($data['id'])))
         {
           JLog::add('L\'utente esiste già, e i gruppi sono ok.');
           break;
+        } else {
+          JLog::add('L\'utente esiste, ma devo cambiare i gruppi.');
+          JUserHelper::setUserGroups($data['id'], array(11, 2));
+          break;
         }
-        JUserHelper::setUserGroups($data['id'], array(11, 2));
-        break;
+
+
         case "director":
         // Tipologia di utenti: 14.
-        if($this->array_values_identical(JUserHelper::getUserGroups($data['id']), array(14,2)))
+        if(in_array ( 14, JUserHelper::getUserGroups($data['id'])))
         {
           JLog::add('L\'utente esiste già, e i gruppi sono ok.');
           break;
+        } else {
+          JLog::add('L\'utente esiste, ma devo cambiare i gruppi.');
+          JUserHelper::setUserGroups($data['id'], array(14, 2));
+          break;
         }
-        JUserHelper::setUserGroups($data['id'], array(14, 2));
-        break;
       }
     } else JLog::add('L\'utente esiste già, non ne modifico il gruppo.');
 
