@@ -9,7 +9,6 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-require_once(__DIR__.'/assets/kint/Kint.class.php');
 jimport( 'joomla.plugin.plugin' );
 
 class PlgUserGrouper extends JPlugin {
