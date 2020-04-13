@@ -17,9 +17,10 @@ class PlgUserGrouper extends JPlugin {
   {
     JLog::add('Avvio la classificazione dell\'utente.');
 
-    if ($isNew)
+    // if ($isNew)
+    if (true)
     {
-      JLog::add('Il tipo è ' . $data['com_fields']['tipologia'], JLog::DEBUG, 'user-sorter');
+      JLog::add('Il tipo è ' . $data['com_fields']['tipologia'] . '.');
 
       switch ($data['com_fields']['tipologia'])
       {
