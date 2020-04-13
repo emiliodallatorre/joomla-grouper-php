@@ -6,7 +6,7 @@
   <creationDate>2020-04-13</creationDate>
   <authorEmail>info@emiliodallatorre.it</authorEmail>
   <authorUrl>www.emiliodallatorre.it</authorUrl>
-  <version>0.0.0-17-g976651a</version>
+  <version>0.0.0-18-g64335f3</version>
   <description></description>
   <files>
     <filename plugin="Grouper">Grouper.php</filename>
