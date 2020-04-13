@@ -10,6 +10,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.plugin.plugin' );
+jimport('joomla.user.helper');
 
 class PlgUserGrouper extends JPlugin {
   public function onUserAfterSave($data, $isNew, $result, $error)
