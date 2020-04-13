@@ -17,10 +17,10 @@ class PlgUserGrouper extends JPlugin {
   {
     JLog::add('Avvio la classificazione dell\'utente.');
     JLog::add($newUser);
-    JLog::add($newUser['com_fields']);
+    JLog::add(implode("|",$newUser));
     JLog::add("...");
     JLog::add($oldUser);
-    JLog::add($oldUser['com_fields']);
+    JLog::add(implode("|",$oldUser));
 
     // if ($isNew)
     if(true)
