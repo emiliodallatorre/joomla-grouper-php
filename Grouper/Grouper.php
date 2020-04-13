@@ -13,32 +13,32 @@ jimport( 'joomla.plugin.plugin' );
 jimport( 'joomla.user.helper' );
 
 class PlgUserGrouper extends JPlugin {
-  public function onUserBeforeSave($oldUser, $isNew, $newUser)
+  public function onUserAfterSave($data, $isNew, $result, $error)
   {
     JLog::add('Avvio la classificazione dell\'utente.');
     
     // if ($isNew)
     if(true)
     {
-      JLog::add('Il tipo è ' . $newUser['com_fields']['tipologia'] . '.');
+      JLog::add('Il tipo è ' . $data['com_fields']['tipologia'] . '.');
 
-      switch ($newUser['com_fields']['tipologia'])
+      switch ($data['com_fields']['tipologia'])
       {
         case "base":
         // Tipologia di utenti: 15.
-        JUserHelper::addUserToGroup($newUser['id'], 15);
+        JUserHelper::addUserToGroup($data['id'], 15);
         break;
         case "medic":
         // Tipologia di utenti: 10.
-        JUserHelper::addUserToGroup($newUser['id'], 10);
+        JUserHelper::addUserToGroup($data['id'], 10);
         break;
         case "partner":
         // Tipologia di utenti: 11.
-        JUserHelper::addUserToGroup($newUser['id'], 11);
+        JUserHelper::addUserToGroup($data['id'], 11);
         break;
         case "director":
         // Tipologia di utenti: 14.
-        JUserHelper::addUserToGroup($newUser['id'], 14);
+        JUserHelper::addUserToGroup($data['id'], 14);
         break;
       }
     } else JLog::add('L\'utente esiste già, non ne modifico il gruppo.');
