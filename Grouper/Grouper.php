@@ -20,7 +20,7 @@ class PlgUserGrouper extends JPlugin {
     // if ($isNew)
     if(true)
     {
-      JLog::add('Il tipo è ' . $newUser['tipologia'] . '.');
+      JLog::add('Il tipo è ' . $newUser['com_fields']['tipologia'] . '.');
 
       switch ($newUser['com_fields']['tipologia'])
       {
