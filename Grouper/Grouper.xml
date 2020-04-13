@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Docs: https://docs.joomla.org/Manifest_files -->
-<extension version="1.0.1" type="plugin" group="User" method="upgrade">
+<extension type="plugin" group="User" method="upgrade">
   <name>Grouper</name>
   <author>Emilio Dalla Torre</author>
   <creationDate>2020-04-13</creationDate>
