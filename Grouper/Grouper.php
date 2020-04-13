@@ -10,11 +10,13 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.plugin.plugin' );
-jimport('joomla.user.helper');
+jimport( 'joomla.user.helper' );
 
 class PlgUserGrouper extends JPlugin {
   public function onUserAfterSave($data, $isNew, $result, $error)
   {
+    JLog::add('Avvio la classificazione dell\'utente.');
+
     if ($isNew)
     {
       JLog::add('Il tipo è ' . $data['com_fields']['tipologia'], JLog::DEBUG, 'user-sorter');
@@ -38,7 +40,7 @@ class PlgUserGrouper extends JPlugin {
         JUserHelper::addUserToGroup($data['id'], 14);
         break;
       }
-    }
+    } else JLog::add('L\'utente esiste già, non ne modifico il gruppo.');
 
     return true;
   }
