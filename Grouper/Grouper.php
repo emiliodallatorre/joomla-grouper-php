@@ -20,9 +20,25 @@ class PlgUserGrouper extends JPlugin {
     // if ($isNew)
     if(true)
     {
-      JLog::add('Il tipo è ' . $data['com_fields']['tipologia'] . '.');
+      // Get a db connection.
+			$db = JFactory::getDbo();
+			// Create a new query object.
+			$query = $db->getQuery(true);
+					
+			$query
+					->select($db->quoteName(array('field_id', 'item_id', 'value')))
+					->from($db->quoteName('#_fields_values'))
+					->where($db->quoteName('item_id') . ' LIKE '. $db->quote($userID))
+					->order('field_id ASC');
+					
+			// Reset the query using our newly populated query object.
+			$db->setQuery($query);
+			// Load the results as a list of stdClass objects
+      $results = $db->loadObjectList();
+          
+      JLog::add('Il tipo è ' . $results[6] . '.');
 
-      switch ($data['com_fields']['tipologia'])
+      switch ($results[6])
       {
         case "base":
         // Tipologia di utenti: 15.
