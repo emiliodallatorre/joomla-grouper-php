@@ -16,6 +16,11 @@ class PlgUserGrouper extends JPlugin {
   public function onUserBeforeSave($oldUser, $isNew, $newUser)
   {
     JLog::add('Avvio la classificazione dell\'utente.');
+    JLog:add($newUser);
+    JLog:add($newUser['com_fields']);
+    JLog:add("...");
+    JLog:add($oldUser);
+    JLog:add($oldUser['com_fields']);
 
     // if ($isNew)
     if(true)
