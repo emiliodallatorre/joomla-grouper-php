@@ -80,16 +80,28 @@ class PlgUserGrouper extends JPlugin {
           break;
         }
 
-
-        case "partner":
-        // Tipologia di utenti: 11.
-        if(in_array ( 11, JUserHelper::getUserGroups($data['id'])))
+        case "medicpartner":
+        // Tipologia di utenti: 16.
+        if(in_array ( 16, JUserHelper::getUserGroups($data['id'])))
         {
           JLog::add('L\'utente esiste già, e i gruppi sono ok.');
           break;
         } else {
           JLog::add('L\'utente esiste, ma devo cambiare i gruppi.');
-          JUserHelper::setUserGroups($data['id'], array(11, 2));
+          JUserHelper::setUserGroups($data['id'], array(16, 2));
+          break;
+        }
+
+
+        case "medicdirector":
+        // Tipologia di utenti: 17.
+        if(in_array ( 17, JUserHelper::getUserGroups($data['id'])))
+        {
+          JLog::add('L\'utente esiste già, e i gruppi sono ok.');
+          break;
+        } else {
+          JLog::add('L\'utente esiste, ma devo cambiare i gruppi.');
+          JUserHelper::setUserGroups($data['id'], array(17, 2));
           break;
         }
 
